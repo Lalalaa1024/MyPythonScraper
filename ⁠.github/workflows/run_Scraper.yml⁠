@@ -26,7 +26,7 @@ jobs:
         pip install requests beautifulsoup4
 
     - name: 執行 Python 爬蟲
-      run: python scraper.py
+      run: python Scraper.py
 
     - name: 把抓到的新資料存回 GitHub
       run: |
