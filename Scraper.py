@@ -5,7 +5,9 @@ from datetime import datetime
 url = "https://tw.news.yahoo.com/"
 response = requests.get(url)
 soup = BeautifulSoup(response.text, "html.parser")
-titles = soup.find_all("h3")
+# 同時抓取 Yahoo 最常見的幾種新聞標題 class
+titles = soup.find_all("a", class_=["StoryTileContent__title", "StreamItemContent__title", "video-title"])
+
 
 # 取得今天的日期作為檔名
 today = datetime.now().strftime("%Y-%m-%d")
